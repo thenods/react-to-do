@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 
 class TodoItemlist extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.todo !== nextProps.todo;
+    }
     render() {
         const {
             todo, handleToggle, handleRemove
